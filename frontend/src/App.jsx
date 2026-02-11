@@ -12,7 +12,7 @@ import SignUp from "./pages/SignUp";
 import WhatsAppButton from "./components/WhatsppButton";
 import VerifyEmail from "./pages/VerifyEmail";
 import GoggleCalendar from "./pages/GoggleCalendar";
-import VerifyBooking from "./pages/verifyBooking";
+import VerifyBooking from "./pages/VerifyBooking";
 const App = () => {
   return (
     <>
@@ -25,7 +25,6 @@ const App = () => {
         <Route path="/booking"  element={<Booking/>}/>
         <Route path="/signup" element={<SignUp/>}/>
         <Route path="/verifyemail" element={<VerifyEmail/>}/>
-        <Route path="/googlelogin" element={<GoggleCalendar/>}/>
         <Route path="/verifybooking" element={<VerifyBooking/>}/>
         
       </Routes>

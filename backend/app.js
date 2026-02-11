@@ -12,7 +12,12 @@ if (process.env.NODE_ENV==="test") {
 
 const app=express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: [
+    "https://growth-funnel-frontend-dsqk.vercel.app/"
+  ],
+  credentials: true
+}));
 //routes
 app.use("/api",leadsRouter);
 app.use("/api",bookRouter);
