@@ -36,8 +36,9 @@ const postUser=async(req,res,next)=>{
    
   } catch (error) {
     console.log('error in registerion from the backend',error);
-    const err=new customError("Error in registering the user",401);
-    next(err);
+    return res.json({success:false,message:"error in registeirng user"})
+    // const err=new customError("Error in registering the user",401);
+    // next(err);
   }
 
 }
@@ -63,9 +64,8 @@ const emailVerification=async(req,res,next)=>{
            
     } catch (error) {
         console.log(error);
-        const err=new customError("Internal server error",500);
-        next(err);
-        // return res.status(400).json({success:false,message:"internal server error"})
+       
+        return res.status(400).json({success:false,message:"internal server error"})
     }
 }
 export {postUser,emailVerification}
