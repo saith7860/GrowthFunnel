@@ -22,6 +22,9 @@ app.use(cors({
 //Global error handling middleware
 app.use(globalErrorHandler)
 //routes
+app.get("/",(req,res)=>{
+  res.json({sucess:true,message:"backend deployed successfully"})
+})
 app.use("/api",leadsRouter);
 app.use("/api",bookRouter);
 
