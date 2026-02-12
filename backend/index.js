@@ -1,15 +1,10 @@
 import app from "./app.js";
 import { connectDB } from "./utils/db.js";
-// const PORT=process.env.PORT||3000;
-let isConnected=false;
+const PORT=process.env.PORT||3000;
 if (process.env.NODE_ENV!="test") {
+    app.listen(PORT,()=>{
     connectDB();
-    isConnected=true
-
-}
-app.use((req,res,next)=>{
-    if (!connectDB) {
-        connectDB()
-    }
-    next();
+    console.log('app is listening on port',PORT);
+    
 })
+}
