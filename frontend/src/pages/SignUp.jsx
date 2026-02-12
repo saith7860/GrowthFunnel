@@ -24,7 +24,7 @@ const SignUp = () => {
     console.log("Signup Data:", formData);
     try {
       const response = await axios.post(
-        "/api/signup",
+        "https://growth-funnel.vercel.app/api/signup",
         formData,
         {
           headers: {
