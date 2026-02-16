@@ -1,17 +1,20 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
+dotenv.config()
 import leadsRouter from './routes/leadRoute.js';
 import globalErrorHandler from './controllers/errorController.js';
 import bookRouter from './routes/bookingRoute.js';
-if (process.env.NODE_ENV==="test") {
-    dotenv.config({path:".env.test"})
-}else{
-    dotenv.config();
-}
+
+// if (process.env.NODE_ENV==="test") {
+//     dotenv.config({path:".env.test"})
+// }else{
+//     dotenv.config();
+// }
 
 const app=express();
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(cors({
   origin: [
     "https://growth-funnel-frontend-dsqk.vercel.app/"
